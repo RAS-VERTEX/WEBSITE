@@ -1,5 +1,5 @@
-// FILE PATH: /app/layout.tsx
-// Replace your existing layout.tsx with this optimized version
+// FILE PATH: /app/layout.tsx (rename from Layout.tsx)
+// This is your corrected layout file
 
 import "./globals.css";
 import type { Metadata } from "next";
@@ -144,7 +144,7 @@ export default function RootLayout({
                 "Noosa",
                 "Nambour",
               ],
-              priceRange: "$",
+              priceRange: "$$",
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "4.9",
