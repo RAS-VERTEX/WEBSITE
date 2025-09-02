@@ -1,14 +1,14 @@
-// FILE PATH: /app/layout.tsx (rename from Layout.tsx)
-// This is your corrected layout file
+// FILE PATH: /app/layout.tsx
 
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Bebas_Neue, Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({
+const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400"],
+  variable: "--font-bebas-neue",
   display: "swap",
 });
 
@@ -94,13 +94,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn(inter.variable, poppins.variable)}>
+    <html lang="en" className={cn(bebasNeue.variable, poppins.variable)}>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#2563eb" />
+        <meta name="theme-color" content="#002653" />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-poppins antialiased">
         {children}
 
         {/* Schema.org structured data */}
