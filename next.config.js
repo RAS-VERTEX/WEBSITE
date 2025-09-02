@@ -3,14 +3,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["images.unsplash.com", "rasvertex.com.au"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
     formats: ["image/webp", "image/avif"],
-  },
-
-  // Enable experimental features for better performance
-  experimental: {
-    optimizeCss: true,
-    scrollRestoration: true,
   },
 
   // Compression

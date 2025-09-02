@@ -14,8 +14,10 @@ const ProjectsShowcase = () => {
       title: "Heritage Home Restoration",
       location: "Noosa Heads",
       category: "Residential",
-      beforeImage: "/images/projects/heritage-before.jpg",
-      afterImage: "/images/projects/heritage-after.jpg",
+      beforeImage:
+        "https://images.unsplash.com/photo-1502005229762-cf1b2da02f3f?w=800&h=600&fit=crop",
+      afterImage:
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
       description:
         "Complete exterior restoration of a 1920s Queenslander, preserving heritage character while modernizing protection and aesthetics.",
       services: [
@@ -30,8 +32,10 @@ const ProjectsShowcase = () => {
       title: "Modern Apartment Complex",
       location: "Maroochydore",
       category: "Body Corporate",
-      beforeImage: "/images/projects/apartment-before.jpg",
-      afterImage: "/images/projects/apartment-after.jpg",
+      beforeImage:
+        "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop",
+      afterImage:
+        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
       description:
         "120-unit apartment complex refresh including exterior painting, balcony restoration, and common area updates.",
       services: [

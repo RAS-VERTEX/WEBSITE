@@ -2,8 +2,7 @@
 
 import React from "react";
 import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import ServicesSection from "@/components/ServicesSection";
+import ScrollServices from "@/components/ScrollServices";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -12,8 +11,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <Hero />
-      <ServicesSection />
+      <ScrollServices />
       <TestimonialsCarousel />
       <ContactSection />
       <Footer />
