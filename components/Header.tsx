@@ -15,9 +15,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-purple-900">
-              RAS-VERTEX
-            </span>
+            <span className="text-2xl font-bold text-purple-900">rochele</span>
           </Link>
 
           {/* Desktop Navigation */}
