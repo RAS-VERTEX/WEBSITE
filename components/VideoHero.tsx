@@ -14,7 +14,7 @@ const VideoHero = () => {
   }, []);
 
   return (
-    <section className="relative p-24 flex items-center justify-center bg-white overflow-hidden">
+    <section className="relative p-36 flex items-center justify-center bg-white overflow-hidden">
       {/* Video Element */}
       <video
         ref={videoRef}
@@ -34,7 +34,7 @@ const VideoHero = () => {
       {/* Text with Video Mask */}
       <div className="relative z-10 text-center px-4">
         <h1
-          className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bebas tracking-wider leading-none text-transparent bg-clip-text"
+          className="text-12xl md:text-7xl lg:text-12xl xl:text-9xl font-bebas tracking-wider leading-none text-transparent bg-clip-text"
           style={{
             background:
               "url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1920&h=1080&fit=crop')",
@@ -98,7 +98,7 @@ const VideoHero = () => {
               y="45%"
               textAnchor="middle"
               dominantBaseline="middle"
-              className="font-bebas text-8xl lg:text-9xl tracking-wider"
+              className="font-bebas text-8xl lg:text-12xl tracking-wider"
               fill="white"
             >
               THE SUNSHINE COAST'S

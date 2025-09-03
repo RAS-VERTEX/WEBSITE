@@ -36,7 +36,7 @@ const Navigation = () => {
               <button
                 onMouseEnter={() => setIsPaintingDropdownOpen(true)}
                 onMouseLeave={() => setIsPaintingDropdownOpen(false)}
-                className="flex items-center space-x-1 text-gray-600 hover:text-brand-blue font-bebas text-lg tracking-wide transition-colors duration-200"
+                className="flex items-center space-x-1 text-gray-600 hover:text-brand-blue font-bebas text-2xl tracking-wide transition-colors duration-200"
               >
                 <span>OUR SERVICES</span>
                 <ChevronDown className="w-4 h-4" />
@@ -76,7 +76,7 @@ const Navigation = () => {
               <button
                 onMouseEnter={() => setIsCompanyDropdownOpen(true)}
                 onMouseLeave={() => setIsCompanyDropdownOpen(false)}
-                className="flex items-center space-x-1 text-gray-600 hover:text-brand-blue font-bebas text-lg tracking-wide transition-colors duration-200"
+                className="flex items-center space-x-1 text-gray-600 hover:text-brand-blue font-bebas text-2xl tracking-wide transition-colors duration-200"
               >
                 <span>COMPANY</span>
                 <ChevronDown className="w-4 h-4" />
