@@ -1,35 +1,44 @@
+// FILE PATH: /components/Navigation.tsx
+
 "use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
 
-const Header = () => {
+const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isPaintingDropdownOpen, setIsPaintingDropdownOpen] = useState(false);
   const [isCompanyDropdownOpen, setIsCompanyDropdownOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <header className="bg-white sticky top-0 z-50">
+      <div className="w-full px-8">
+        <div className="flex items-center justify-between h-24 max-w-none">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-purple-900">
-              RAS-VERTEX
-            </span>
+            <div className="relative w-40 h-12">
+              <Image
+                src="/logo.png"
+                alt="RAS-VERTEX Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-12 flex-1 justify-center">
             {/* Painting Services Dropdown */}
             <div className="relative">
               <button
                 onMouseEnter={() => setIsPaintingDropdownOpen(true)}
                 onMouseLeave={() => setIsPaintingDropdownOpen(false)}
-                className="flex items-center space-x-1 text-gray-700 hover:text-purple-900 font-medium transition-colors"
+                className="flex items-center space-x-1 text-gray-600 hover:text-brand-blue font-bebas text-lg tracking-wide transition-colors duration-200"
               >
-                <span>Painting Services</span>
+                <span>OUR SERVICES</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
 
@@ -40,36 +49,23 @@ const Header = () => {
                   onMouseLeave={() => setIsPaintingDropdownOpen(false)}
                   className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-100 py-4"
                 >
-                  <div className="px-4 py-2 border-b border-gray-100 mb-2">
-                    <div className="bg-blue-100 rounded-lg p-3">
-                      <div className="text-sm font-semibold text-purple-900 mb-1">
-                        Residential
-                      </div>
-                      <div className="text-sm font-semibold text-purple-900 mb-1">
-                        Body Corporate
-                      </div>
-                      <div className="text-sm font-semibold text-purple-900">
-                        Commercial
-                      </div>
-                    </div>
-                  </div>
                   <Link
                     href="/services/residential"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-purple-900"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors font-bebas tracking-wide"
                   >
-                    Residential Painting
+                    RESIDENTIAL PAINTING
                   </Link>
                   <Link
                     href="/services/commercial"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-purple-900"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors font-bebas tracking-wide"
                   >
-                    Commercial Painting
+                    COMMERCIAL PAINTING
                   </Link>
                   <Link
                     href="/services/body-corporate"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-purple-900"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors font-bebas tracking-wide"
                   >
-                    Body Corporate
+                    BODY CORPORATE
                   </Link>
                 </div>
               )}
@@ -80,9 +76,9 @@ const Header = () => {
               <button
                 onMouseEnter={() => setIsCompanyDropdownOpen(true)}
                 onMouseLeave={() => setIsCompanyDropdownOpen(false)}
-                className="flex items-center space-x-1 text-gray-700 hover:text-purple-900 font-medium transition-colors"
+                className="flex items-center space-x-1 text-gray-600 hover:text-brand-blue font-bebas text-lg tracking-wide transition-colors duration-200"
               >
-                <span>Company</span>
+                <span>COMPANY</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
 
@@ -95,47 +91,47 @@ const Header = () => {
                 >
                   <Link
                     href="/about"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-purple-900"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors font-bebas tracking-wide"
                   >
-                    About Us
+                    ABOUT US
                   </Link>
                   <Link
                     href="/team"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-purple-900"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors font-bebas tracking-wide"
                   >
-                    Our Team
+                    OUR TEAM
                   </Link>
                   <Link
                     href="/testimonials"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-purple-900"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors font-bebas tracking-wide"
                   >
-                    Testimonials
+                    TESTIMONIALS
                   </Link>
                 </div>
               )}
             </div>
           </div>
 
-          {/* Right Side - Contact & CTA */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Desktop Contact & CTA - Right Side */}
+          <div className="hidden md:flex items-center space-x-6">
             <Link
-              href="tel:0731306043"
-              className="text-gray-700 hover:text-purple-900 font-medium border border-gray-300 rounded-full px-4 py-2 hover:border-purple-900 transition-colors"
+              href="tel:(07)31319177"
+              className="text-gray-600 hover:text-brand-blue font-bebas text-lg tracking-wide transition-colors duration-200"
             >
-              (07) 3130 6043
+              (07) 3113 9177
             </Link>
             <Link
               href="/quote"
-              className="bg-purple-900 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-full transition-colors inline-flex items-center"
+              className="bg-brand-blue hover:bg-primary-700 text-white font-bebas text-lg tracking-wide px-6 py-3 rounded-full transition-all duration-200"
             >
-              Free Quote →
+              FREE QUOTE →
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200"
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6 text-gray-700" />
@@ -151,31 +147,31 @@ const Header = () => {
             <div className="space-y-4">
               <Link
                 href="/services"
-                className="block text-gray-700 hover:text-purple-900 font-medium"
+                className="block text-gray-700 hover:text-brand-blue font-bebas text-lg tracking-wide"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Painting Services
+                PAINTING SERVICES
               </Link>
               <Link
                 href="/company"
-                className="block text-gray-700 hover:text-purple-900 font-medium"
+                className="block text-gray-700 hover:text-brand-blue font-bebas text-lg tracking-wide"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Company
+                COMPANY
               </Link>
               <div className="pt-4 border-t border-gray-100">
                 <Link
-                  href="tel:0731306043"
-                  className="block text-gray-700 hover:text-purple-900 font-medium mb-3"
+                  href="tel:(07)31319177"
+                  className="block text-gray-700 hover:text-brand-blue font-bebas text-lg tracking-wide mb-3"
                 >
-                  (07) 3130 6043
+                  (07) 3113 9177
                 </Link>
                 <Link
                   href="/quote"
-                  className="bg-purple-900 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-full transition-colors inline-flex items-center"
+                  className="bg-brand-blue hover:bg-primary-700 text-white font-bebas text-lg tracking-wide px-6 py-2 rounded-full transition-colors inline-flex items-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Free Quote →
+                  FREE QUOTE →
                 </Link>
               </div>
             </div>
@@ -186,4 +182,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navigation;

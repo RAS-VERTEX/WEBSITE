@@ -1,21 +1,32 @@
+// FILE PATH: /components/Navigation.tsx
+
 "use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
 
-const Header = () => {
+const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isPaintingDropdownOpen, setIsPaintingDropdownOpen] = useState(false);
   const [isCompanyDropdownOpen, setIsCompanyDropdownOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+    <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-purple-900">rochele</span>
+            <div className="relative w-32 h-8">
+              <Image
+                src="/logo.png"
+                alt="Rochele Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -25,7 +36,7 @@ const Header = () => {
               <button
                 onMouseEnter={() => setIsPaintingDropdownOpen(true)}
                 onMouseLeave={() => setIsPaintingDropdownOpen(false)}
-                className="flex items-center space-x-1 text-gray-700 hover:text-purple-900 font-medium transition-colors"
+                className="flex items-center space-x-1 text-gray-700 hover:text-purple-900 font-medium transition-colors duration-200"
               >
                 <span>Painting Services</span>
                 <ChevronDown className="w-4 h-4" />
@@ -78,7 +89,7 @@ const Header = () => {
               <button
                 onMouseEnter={() => setIsCompanyDropdownOpen(true)}
                 onMouseLeave={() => setIsCompanyDropdownOpen(false)}
-                className="flex items-center space-x-1 text-gray-700 hover:text-purple-900 font-medium transition-colors"
+                className="flex items-center space-x-1 text-gray-700 hover:text-purple-900 font-medium transition-colors duration-200"
               >
                 <span>Company</span>
                 <ChevronDown className="w-4 h-4" />
@@ -114,17 +125,17 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Right Side - Contact & CTA */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Desktop Contact & CTA */}
+          <div className="hidden md:flex items-center space-x-6">
             <Link
-              href="tel:0731306043"
-              className="text-gray-700 hover:text-purple-900 font-medium border border-gray-300 rounded-full px-4 py-2 hover:border-purple-900 transition-colors"
+              href="tel:(07)31319177"
+              className="text-gray-700 hover:text-purple-900 font-medium transition-colors duration-200"
             >
-              (07) 3130 6043
+              (07) 3113 9177
             </Link>
             <Link
               href="/quote"
-              className="bg-purple-900 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-full transition-colors inline-flex items-center"
+              className="bg-purple-900 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105"
             >
               Free Quote →
             </Link>
@@ -133,7 +144,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200"
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6 text-gray-700" />
@@ -163,14 +174,14 @@ const Header = () => {
               </Link>
               <div className="pt-4 border-t border-gray-100">
                 <Link
-                  href="tel:0731306043"
-                  className="block text-gray-700 hover:text-purple-900 font-medium mb-3"
+                  href="tel:(07)31319177"
+                  className="block text-gray-700 hover:text-brand-blue font-medium mb-3"
                 >
-                  (07) 3130 6043
+                  (07) 3113 9177
                 </Link>
                 <Link
                   href="/quote"
-                  className="bg-purple-900 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-full transition-colors inline-flex items-center"
+                  className="bg-brand-blue hover:bg-primary-700 text-white font-semibold px-6 py-2 rounded-full transition-colors inline-flex items-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Free Quote →
@@ -184,4 +195,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navigation;
